@@ -17,10 +17,8 @@ import java.util.List;
 public class Auto4beats {
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver", "C:\\ProgramData\\chocolatey\\lib\\chromedriver\\tools\\chromedriver-win32\\chromedriver.exe");//give path to chromedriver
-        ChromeOptions options = new ChromeOptions();
 
-
-        WebDriver driver = new ChromeDriver(options);
+        WebDriver driver = new ChromeDriver();
 
         try {
             String excelFile = "C:\\Users\\ssowm\\Desktop\\f1\\4beats\\src\\test\\java\\4BeatsQ1.xlsx";//give path to excel file
@@ -32,7 +30,7 @@ public class Auto4beats {
             String keyword = null;
             Row row = null;
             Cell cell;
-            for (int rowindex = 3; rowindex < 12; rowindex++) {
+            for (int rowindex = 2; rowindex < 12; rowindex++) {
                 row = sheet.getRow(rowindex);
                 cell = row.getCell(columnIndex - 1);
                 keyword = cell.getStringCellValue();
